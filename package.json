@@ -1,0 +1,19 @@
+{
+  "name": "sexo",
+  "version": "1.0.0",
+  "description": "hi",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "Dark",
+  "license": "ISC",
+  "dependencies": {
+    "command-discord": "^1.2.7",
+    "discord.js": "^11.4.2",
+    "moment": "^2.20.1",
+    "mongoose": "5.3.10",
+    "request": "^2.85.0",
+    "weather-js": "^2.0.0"
+  }
+}
