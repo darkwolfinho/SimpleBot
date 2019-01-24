@@ -1,7 +1,7 @@
 # SimpleBot
-This is a Simple Bot using 
+This is a simple bot, that uses Javascript (Node.js)
 
-## NPMS
+## Dependencies
 
-* [command-discord](https://www.npmjs.com/package/command-discord) - The web framework used
-* [discord.js](https://www.npmjs.com/package/discord.js) - Dependency Management
+* [command-discord](https://www.npmjs.com/package/command-discord) - A framework to easily do commands using discord.js
+* [discord.js](https://www.npmjs.com/package/discord.js) - discord.js is a powerful node.js module that allows you to interact with the Discord API very easily
