@@ -37,8 +37,8 @@ module.exports = new (class cmd {
             var txt = filtrado.slice(0, 8).map((c, d) => `[${(d + 1)}] - ${c.nome}\nTotal de pessoas convidadas: **${c.usos}**\n`)
             message.reply({
                 embed: {
-                    'author': 'Top divulgadores',
-                    'description': `${txt.join('')}\n\n"Somando os convites desses usuarios da um total de:\n **${numero}**  Usuarios Recrutados!"`,
+                    'author': 'Top promoters',
+                    'description': `${txt.join('')}\n\n"Adding the invitations of these users to a total of:\n **${numero}**  Recruited Users!"`,
                     'color': 65535,
                     'footer': {
                         'icon_url': `${message.author.avatarURL}`,

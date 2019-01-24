@@ -34,7 +34,7 @@ module.exports = new (class cmd {
         this.aliases = []
     }
     async run({ message, buildMessage, client, args }) {
-        if (client.external.Donos.indexOf(message.author.id) == -1) return message.channel.send(`:no_good: ${message.author.toString()} Voce não tem permissão para usar esse comando`)
+        if (client.external.Owners.indexOf(message.author.id) == -1) return message.channel.send(`:no_good: ${message.author.toString()} You are not allowed to use this command`)
         var codigo = args.join(' ').replace(/`/g, '`')
         try {
             codigo = eval(codigo)

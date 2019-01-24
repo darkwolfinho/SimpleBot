@@ -1,6 +1,6 @@
 const command = require("command-discord");
 const client = command.Client({
-    token: "Seu Token",
+    token: "Your Token",
     color: "65535", //optional color for  embeds in decimal (65535 default)
     path: "./commands", // path for commands folder, (./commands default)
     prefix: "'", // prefix can be an array, (! default)
@@ -10,8 +10,8 @@ const client = command.Client({
     },
     external: [
         { key: "Discord", value: require("discord.js") },
-        { key: "Donos", value: [" Sua ID "] },
-        { key: "Support", value: " Link do Seu Grupo " }
+        { key: "Owners", value: [" Your ID "] },
+        { key: "Support", value: " Your Group Link " }
     ] // external variables to use instead of doing global variables
 
 }, {
@@ -22,7 +22,7 @@ const client = command.Client({
 client.on("ready", async () => {
     console.log('on')
     // Jogando do Botv
-    const falas = [`Use ${client.prefix}help ou ${client.prefix}ajuda`, `Use ${client.prefix}help Para Ver Meus Comandos`]
+    const falas = [`Use ${client.prefix}help or ${client.prefix}ajuda`, `Use ${client.prefix}help to view my Commands`]
     setInterval(() => {
         var selecionada = falas[Math.floor(Math.random() * falas.length)]
         if (selecionada == null) selecionada = falas[Math.floor(Math.random() * falas.length)]

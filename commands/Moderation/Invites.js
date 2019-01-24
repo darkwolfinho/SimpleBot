@@ -2,7 +2,7 @@ module.exports = new (class cmd {
     constructor() {
         this.name = "invites";
         this.category = "moderation"
-        this.help = "Veja a quantidade de Users Convidados";
+        this.help = "See the amount of Invited Users";
         this.cooldown = 5;
         this.cdMessage = "Wait 5 seconds to use this again";
         this.aliases = ["convites"]
@@ -21,15 +21,15 @@ module.exports = new (class cmd {
             let txt = filtrado.map(b => `${b.url} **|** Pessoas convidadas: **${b.uses}**\n`);
             let total = 0;
             filtrado.map(b => total+= b.uses);
-            if (txt == '' || txt == null || txt.length < 1) txt = "Nenhum convite nesse servidor";
+            if (txt == '' || txt == null || txt.length < 1) txt = "No invitation on this server";
             else txt = txt.join('');
             message.reply({embed:{
                 'name':mencionado.username,
                 'author': {
-                    "name": `${mencionado.username} Convites`,
+                    "name": `${mencionado.username} Invites:`,
                     "icon_url":mencionado.avatarURL
                 },
-                'description':`**${txt}\n\Server: **${message.guild.name}**\n\nTotal de Usos: **${total}`,
+                'description':`**${txt}\n\Server: **${message.guild.name}**\n\nTotal Uses: **${total}`,
                 'color':message.member.displayColor || 65535,
                 'thumbnail':{
                     'url':message.guild.iconURL

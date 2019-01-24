@@ -13,7 +13,7 @@ module.exports = new (class cmd {
         if (args[0] > 100) return message.reply("**Use: " + client.prefix + "clear [1 ao 100]**");
         if (args[0] < 1) return message.reply("**Use: " + client.prefix + "clear [1 ao 100]**");
         message.channel.bulkDelete(args[0]).then(() => {
-            message.channel.send(`:pig: **${args[0]} Mensagens foram limpadas!**`).then(msg => msg.delete(6 * 1000));
+            message.channel.send(`:pig: **${args[0]} Messages have been cleared!**`).then(msg => msg.delete(6 * 1000));
         });
     }
 })

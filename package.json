@@ -1,12 +1,12 @@
 {
-  "name": "sexo",
+  "name": "simplebot",
   "version": "1.0.0",
-  "description": "hi",
+  "description": "This is a simple bot, that uses Javascript (Node.js)",
   "main": "main.js",
   "scripts": {
     "start": "node main.js"
   },
-  "author": "Dark",
+  "author": "harry",
   "license": "ISC",
   "dependencies": {
     "command-discord": "^1.2.7",
