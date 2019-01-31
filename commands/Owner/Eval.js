@@ -4,25 +4,6 @@ function clean(text) {
     else
         return text;
 }
-function wrapText(context, text, x, y, maxWidth, lineHeight) {
-    var words = text.split(' ');
-    var line = '';
-
-    for (var n = 0; n < words.length; n++) {
-        var testLine = line + words[n] + ' ';
-        var metrics = context.measureText(testLine);
-        var testWidth = metrics.width;
-        if (testWidth > maxWidth && n > 0) {
-            context.fillText(line, x, y);
-            line = words[n] + ' ';
-            y += lineHeight;
-        }
-        else {
-            line = testLine;
-        }
-    }
-    context.fillText(line, x, y);
-}
 
 module.exports = new (class cmd {
     constructor() {
@@ -35,14 +16,18 @@ module.exports = new (class cmd {
     }
     async run({ message, buildMessage, client, args }) {
         if (client.external.Owners.indexOf(message.author.id) == -1) return message.channel.send(`:no_good: ${message.author.toString()} You are not allowed to use this command`)
-        var codigo = args.join(' ').replace(/`/g, '`')
         try {
-            codigo = eval(codigo)
+            const code = args.join(" ");
+            let evaled = eval(code);
+
+            if (typeof evaled !== "string")
+                evaled = require("util").inspect(evaled);
+
+            message.channel.send(clean(evaled), { code: "xl" });
+        } catch (err) {
+            message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
         }
-        catch (err) {
-            codigo = err;
-        }
-        codigo = await Promise.resolve(codigo)
-        message.channel.send("```js\n" + codigo + "```")
+        return true;
     }
-})
+
+})Copy
