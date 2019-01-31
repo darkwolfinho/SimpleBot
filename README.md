@@ -18,5 +18,6 @@ npm -v
 ```
 - Ok, now an installation of our npm
 ```
-npm i command-discord
+npm i discord.js // NPM required
+npm i command-discord // Our NPM
 ```
